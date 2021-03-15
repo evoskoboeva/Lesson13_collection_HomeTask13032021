@@ -24,6 +24,10 @@ public class Order {
     private ArrayList<String> foods;
     private StatusOrder statusOrder;
 
+    public Order() {
+
+    }
+
 
     @Override
     public String toString() {
@@ -73,6 +77,7 @@ public class Order {
 
     private void setFoods(StatusOrder foods) {
     }
+
 
 
 }

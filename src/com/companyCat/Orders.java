@@ -1,6 +1,5 @@
 package com.companyCat;
 
-import java.awt.print.Book;
 import java.util.ArrayList;
 
 public class Orders {
@@ -28,7 +27,6 @@ private ArrayList<Order> orders;
     }
 
     public void DelOrder(int id ) {
-            Order temp = null;
         for (Order order:this.orders ) {
             if (order.orderId == id) {
 
@@ -38,14 +36,30 @@ private ArrayList<Order> orders;
 
     }
     public void ChangeStatusOrder(int id,StatusOrder statusOrder ) {
-        Order temp = null;
+
         for (Order order:this.orders ) {
             if (order.orderId == id) {
 
                 order.setStatusOrder(statusOrder);
             }
         }
+    }
+    public Order SearchByFood(String food){
+        //Order temp = new Order();
+        Order temp = null;
+
+        for (Order order : this.orders) {
+
+            if (food.toLowerCase().contains(food.toLowerCase()))
+                        temp = order;
+
+
+        }
+
+        return temp;
+
 
     }
+
 }
 
