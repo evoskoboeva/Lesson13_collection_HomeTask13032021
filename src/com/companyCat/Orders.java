@@ -27,29 +27,51 @@ private ArrayList<Order> orders;
     }
 
     public void DelOrder(int id ) {
-        for (Order order:this.orders ) {
-            if (order.orderId == id) {
+        try {
+        if (id>0&& id<orders.size())
 
-        this.orders.remove(order);
-            }
-            }
+
+        for (Order order:this.orders ) {
+
+               if (order.orderId == id) {
+
+                   this.orders.remove(order);
+               }
+
+        }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
     public void ChangeStatusOrder(int id,StatusOrder statusOrder ) {
 
         for (Order order:this.orders ) {
-            if (order.orderId == id) {
+           try {
+               if (order.orderId == id) {
 
-                order.setStatusOrder(statusOrder);
-            }
+                   order.setStatusOrder(statusOrder);
+               }
+           } catch (Exception e) {
+               e.printStackTrace();
+           }
+
+
+
         }
     }
     public void SearchByFood(String food1){
 
         for (Order order : this.orders) {
+            try {
 
-            if (order.getFoods().contains(food1.toLowerCase()))
-                System.out.println(order);
+
+                if (order.getFoods().contains(food1.toLowerCase())) {
+                    System.out.println(order);
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
 
         }
     }

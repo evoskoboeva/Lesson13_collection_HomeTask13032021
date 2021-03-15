@@ -13,7 +13,7 @@ public class Ingridient {
     public String toString() {
         return "Ingridient{" +
                 "nameIngridient='" + nameIngridient + '\'' +
-                ", quantityIngridient=" + quantityIngridient +
+                ", quantityIngridient=" + (this.quantityIngridient<0?"not correct":this.quantityIngridient) +
                 ", measure=" + measure +
                 ", description='" + descriptionIngridient + '\'' +
                 '}';
@@ -45,7 +45,11 @@ public class Ingridient {
     }
 
     public void setQuantityIngridient(Integer quantityIngridient) {
-        this.quantityIngridient = quantityIngridient;
+        if (quantityIngridient < 0) {
+            this.quantityIngridient = -1;
+        } else {
+            this.quantityIngridient = quantityIngridient;
+        }
     }
 
     public Measure getMeasure() {
@@ -66,7 +70,7 @@ public class Ingridient {
 
     public Ingridient(String nameIngridient, Integer quantityIngridient, Measure measure, String descriptionIngridient) {
         this.nameIngridient = nameIngridient;
-        this.quantityIngridient = quantityIngridient;
+        this.setQuantityIngridient(quantityIngridient);
         this.measure = measure;
         this.descriptionIngridient = descriptionIngridient;
     }

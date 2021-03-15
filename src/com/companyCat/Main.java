@@ -32,7 +32,7 @@ public class Main {
         Food eggsWithCheese = new Food("eggs with cheese", "very testy",
                 300, 5, "egg","cheese");
 
-        Food pancake = new Food("pancake","",500,15,"egg",
+        Food pancake = new Food("pancake","",-500,-15,"egg",
                 "milk","sugar");
         Food espresso = new Food("espresso","",0,2,"coffee","water");
         Food teaGreenWithMilk = new Food("teaGreenWithMilk","",50,3,"teaGreen",
@@ -56,6 +56,8 @@ public class Main {
         orders.ChangeStatusOrder(3, StatusOrder.cancelled);
         System.out.println(orders);
         orders.SearchByFood("espresso");
+        orders.SearchByFood("egg");
+        System.out.println(pancake);
 
 
 

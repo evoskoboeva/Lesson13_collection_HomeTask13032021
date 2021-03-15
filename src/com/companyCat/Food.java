@@ -19,8 +19,8 @@ public class Food extends ArrayList<String> {
                 "nameFood='" + nameFood + '\'' +
                 ", ingridients=" + ingridients +
                 ", descriptionFood='" + descriptionFood + '\'' +
-                ", calories=" + calories +
-                ", cookingTimeFood=" + cookingTimeFood +
+                ", calories=" + (this.calories<0? "unknown":calories) +
+                ", cookingTimeFood=" + (this.cookingTimeFood<0? "unknown":this.cookingTimeFood) +
                 '}';
     }
 
@@ -66,7 +66,9 @@ public class Food extends ArrayList<String> {
     }
 
     public void setCalories(Integer calories) {
-        this.calories = calories;
+        if (calories > 0) {
+            this.calories = calories;
+        } else this.calories = -1;
     }
 
     public Integer getCookingTimeFood() {
@@ -74,7 +76,10 @@ public class Food extends ArrayList<String> {
     }
 
     public void setCookingTimeFood(Integer cookingTimeFood) {
+        if (cookingTimeFood>0){
         this.cookingTimeFood = cookingTimeFood;
+        }
+        else {this.cookingTimeFood = -1;}
     }
         public Food (Food food){
         this.nameFood = food.nameFood;
@@ -89,8 +94,8 @@ public class Food extends ArrayList<String> {
         this.setIngridients(ingridients) ;
 
         this.descriptionFood = descriptionFood;
-        this.calories = calories;
-        this.cookingTimeFood = cookingTimeFood;
+        this.setCalories(calories);
+        this.setCookingTimeFood(cookingTimeFood);
     }
     public Food(String nameFood, String descriptionFood, Integer calories,Integer cookingTimeFood,
                 String...ingridients ) {
