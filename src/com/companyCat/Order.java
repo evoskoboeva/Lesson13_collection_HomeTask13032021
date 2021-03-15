@@ -24,9 +24,18 @@ public class Order {
     private ArrayList<String> foods;
     private StatusOrder statusOrder;
 
-    public Order() {
+    public  Order() {
+        this.orderId = orderId;
+        this.timeOrder = timeOrder;
+        this.statusOrder = statusOrder;
+        this.foods = new ArrayList<String>();
+        for (String food : foods) {
+            this.foods.add(food);
+        }
 
-    }
+        }
+
+
 
 
     @Override

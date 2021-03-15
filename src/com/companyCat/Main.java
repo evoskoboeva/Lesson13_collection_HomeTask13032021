@@ -55,7 +55,7 @@ public class Main {
         //orders.DelOrder(2);
         orders.ChangeStatusOrder(3, StatusOrder.cancelled);
         System.out.println(orders);
-        System.out.println(orders.SearchByFood("espresso"));
+        orders.SearchByFood("espresso");
 
 
 

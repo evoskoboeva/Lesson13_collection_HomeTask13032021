@@ -44,21 +44,14 @@ private ArrayList<Order> orders;
             }
         }
     }
-    public Order SearchByFood(String food){
-        //Order temp = new Order();
-        Order temp = null;
+    public void SearchByFood(String food1){
 
         for (Order order : this.orders) {
 
-            if (food.toLowerCase().contains(food.toLowerCase()))
-                        temp = order;
-
+            if (order.getFoods().contains(food1.toLowerCase()))
+                System.out.println(order);
 
         }
-
-        return temp;
-
-
     }
 
 }
