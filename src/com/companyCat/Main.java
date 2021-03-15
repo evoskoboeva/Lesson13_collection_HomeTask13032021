@@ -52,7 +52,8 @@ public class Main {
         orders.AddOrder(order1);
         orders.AddOrder(order3);
         System.out.println(orders);
-        orders.DelOrder(2);
+        //orders.DelOrder(2);
+        orders.ChangeStatusOrder(3, StatusOrder.cancelled);
         System.out.println(orders);
 
 

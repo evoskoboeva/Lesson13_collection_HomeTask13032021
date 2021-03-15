@@ -24,23 +24,28 @@ private ArrayList<Order> orders;
     }
 
     public void AddOrder(Order order){
-
-
         this.orders.add(order);
     }
 
-    public Order DelOrder(int id ) {
+    public void DelOrder(int id ) {
             Order temp = null;
         for (Order order:this.orders ) {
             if (order.orderId == id) {
-                    temp = orders.remove(id);
+
+        this.orders.remove(order);
             }
             }
 
-
-        return temp;
     }
+    public void ChangeStatusOrder(int id,StatusOrder statusOrder ) {
+        Order temp = null;
+        for (Order order:this.orders ) {
+            if (order.orderId == id) {
 
+                order.setStatusOrder(statusOrder);
+            }
+        }
 
+    }
 }
 
